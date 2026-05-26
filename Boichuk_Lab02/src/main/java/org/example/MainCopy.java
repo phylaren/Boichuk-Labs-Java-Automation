@@ -4,21 +4,17 @@ import org.example.HardcodedTranslations.Day;
 
 import java.util.Scanner;
 
-//comments
+
+// COMENTS
 
 
-/*
- cool big comments
- */
 public class MainCopy {
     public static void main(String[] args) {
         System.out.println("DAY TRANSLATOR");
         Scanner scanner = new Scanner(System.in);
 
 
-        /**
-         * cool big comments like this
-         */
+
         while (true) {
             System.out.print("> Enter day (or 'exit'): ");
             String input = scanner.nextLine().trim().toUpperCase();
@@ -37,15 +33,9 @@ public class MainCopy {
         }
     }
 
-    private static String returnDay(Day day) {
-        return switch (day) {
-            case MONDAY -> "Понеділок";
-            case TUESDAY -> "Вівторок";
-            case WEDNESDAY -> "Середа";
-            case THURSDAY -> "Четвер";
-            case FRIDAY -> "П’ятниця";
-            case SATURDAY -> "Субота";
-            case SUNDAY -> "Неділя";
-        };
+    private static String returnDay(Day day){
+        return "day";
     }
+
+    
 }

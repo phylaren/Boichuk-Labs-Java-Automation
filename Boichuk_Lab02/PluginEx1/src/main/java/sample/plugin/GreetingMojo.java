@@ -9,7 +9,7 @@ import org.apache.maven.plugins.annotations.Mojo;
  *
  */
 
-// execution: mvn sample.plugin:hello-maven-plugin:sayhi
+// execution: mvn sample.plugin:plugin1-maven-plugin:sayhi
 @Mojo(name = "sayhi")
 public class GreetingMojo extends AbstractMojo
 {
