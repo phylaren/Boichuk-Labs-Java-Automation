@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>TestProject</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>24</maven.compiler.source>
+        <maven.compiler.target>24</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>sample.plugin</groupId>
+                <artifactId>hello-maven-plugin</artifactId>
+                <version>1.0-SNAPSHOT</version>
+
+                <configuration>
+                    <rootDir>${project.basedir}/src/main/java</rootDir>
+                    <outputFile>${project.build.directory}/all-my-code.txt</outputFile>
+                    <logsState>ALL</logsState>
+                </configuration>
+
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>bundle-code</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>my.plugin</groupId>
+                <artifactId>myplugin-maven-plugin</artifactId>
+                <version>1.0-SNAPSHOT</version>
+
+                <!--            Чи можу я запускати лише з конфігурацією тут чи я можу змінювати конфігурацію під час запуску-->
+                <configuration>
+                    <targetFile>${project.basedir}/src/main/java/org/example/MainCopy.java</targetFile>
+                    <visibility>PRIVATE</visibility>
+                    <part>METHODS</part>
+                    <deleteComments>true</deleteComments>
+                </configuration>
+
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>bundle-code</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
