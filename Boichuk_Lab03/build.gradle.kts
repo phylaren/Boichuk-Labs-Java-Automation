@@ -29,7 +29,7 @@ tasks.register("countComments") {
         var totalFilesScanned = 0
 
         sourceDir.walkTopDown()
-            .filter { it.isFile && it.extension in listOf("java", "kt", "ts") }
+            .filter { it.isFile && it.extension in listOf("java", "kt") }
             .forEach { file ->
                 totalFilesScanned++
                 val content = file.readText()
