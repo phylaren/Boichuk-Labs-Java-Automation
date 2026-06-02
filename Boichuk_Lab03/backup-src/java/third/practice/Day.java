@@ -1,0 +1,7 @@
+package third.practice;
+
+// WOW IT'S ENUM WITH THE DAYS OMG SO COOL
+public enum Day {
+    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+}
+
