@@ -1,0 +1,1 @@
+rootProject.name = "Boichuk_Lab07"
